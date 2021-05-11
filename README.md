@@ -6,7 +6,7 @@ Cette application permet de :
 - Se connecter à une base de données
 - Lire les "book" en bdd et les afficher
 - Ajouter un "book" en bdd
-- 
+
 Dans les deux exercices suivant, le but sera essentiellement de déplacer du code.
 Le fonctionnement de l'application restera le même, on pourra toujours ajouter et lire en bdd.
 
