@@ -1,5 +1,5 @@
 # Exo php
-## _Appréhender les fonctions et les classes_
+## _Appréhender les fonctions_
 
 Cette application permet de :
 
