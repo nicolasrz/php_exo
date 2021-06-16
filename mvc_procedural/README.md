@@ -14,3 +14,5 @@ Cette application permet de :
 ## Objectif
 - Passer notre code en MVC sans utiliser la POO
 
+## Video Youtube:
+https://www.youtube.com/watch?v=o6oMd-rN7zI
