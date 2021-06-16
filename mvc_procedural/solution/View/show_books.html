@@ -1,0 +1,26 @@
+
+<a href="index.php?controller=home&action=showFormSaveBook">Ajouter un book</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Auteur</th>
+        <th>Titre</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($books as $book) : ?>
+    <tr>
+        <td><?= $book['id'] ; ?></td>
+        <td><?= $book['author'] ; ?></td>
+        <td><?= $book['title'] ; ?></td>
+        <td>
+            - <a href="index.php?controller=home&action=showFormUpdate&id=<?=$book['id'];?>">Modifier</a>
+            - <a href="index.php?controller=home&action=deleteBookAction&id=<?=$book['id'];?>">Supprimer</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

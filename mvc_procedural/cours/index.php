@@ -1,10 +1,16 @@
+
+
+<form action="save_book.php" method="POST">
+
+    <label for="title">Titre</label>
+    <input id="title" type="text" name="title">
+    <label for="author">Auteur</label>
+    <input id="author" type="text" name="author">
+    <button type="submit">Enregistrer</button>
+</form>
+
 <?php
 
-// montre le formulaire pour ajouter un Book en base de données
-include ('form_book.html');
-
-
-//Affiche les livres en base de données
 
 $user = "php_exo";
 $pass = "php_exo";
@@ -25,4 +31,39 @@ $query->execute();
 
 // on récupère le résultat sous forme d'un tableau
 $books = $query->fetchAll();
-include('show_books.php');
+?>
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Auteur</th>
+        <th>Titre</th>
+        <th>ACtion</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($books as $book) : ?>
+    <tr>
+        <td><?= $book['id'] ; ?></td>
+        <td><?= $book['author'] ; ?></td>
+        <td><?= $book['title'] ; ?></td>
+        <td>
+            - <a href="update_book.php?id=<?=$book['id'];?>">Modifier</a>
+            - <a href="delete_book.php?id=<?=$book['id'];?>">Supprimer</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</body>
+</html>
